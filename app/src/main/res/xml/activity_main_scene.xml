@@ -51,7 +51,7 @@
             android:id="@+id/ramadan_animation"
             android:layout_width="250dp"
             android:layout_height="250dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="32dp"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toBottomOf="@+id/app_bar_container" />
@@ -71,13 +71,5 @@
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent" />
-        <Constraint
-            android:layout_height="wrap_content"
-            motion:layout_constraintStart_toStartOf="@id/body_container"
-            motion:layout_constraintTop_toTopOf="@id/body_container"
-            motion:layout_constraintBottom_toBottomOf="@+id/body_container"
-            motion:layout_constraintEnd_toEndOf="@id/body_container"
-            android:layout_width="wrap_content"
-            android:id="@+id/title_textView" />
     </ConstraintSet>
 </MotionScene>
