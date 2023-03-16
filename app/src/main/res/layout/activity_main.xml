@@ -32,8 +32,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/app_bar_container"
         android:layout_width="match_parent"
-        android:layout_height="84dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="@dimen/app_bar_height"
+        android:layout_marginTop="@dimen/margin_16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -42,9 +42,9 @@
 
     <ImageView
         android:id="@+id/menu_icon"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero_dimens"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="@dimen/margin_16"
         android:contentDescription="@null"
         app:layout_constraintBottom_toBottomOf="@id/app_bar_container"
         app:layout_constraintStart_toStartOf="@id/app_bar_container"
@@ -53,15 +53,15 @@
 
     <TextView
         android:id="@+id/hijri_date_textView"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero_dimens"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="@dimen/margin_16"
         android:ellipsize="end"
         android:fontFamily="@font/poppins_regular"
         android:maxLines="1"
-        android:text="1 Ramadan, 1444"
+        android:text="@string/app_bar_title"
         android:textColor="@color/primary_color"
-        android:textSize="28sp"
+        android:textSize="@dimen/font_28"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/gregorian_date_textView"
         app:layout_constraintEnd_toEndOf="@id/app_bar_container"
@@ -69,14 +69,14 @@
 
     <TextView
         android:id="@+id/gregorian_date_textView"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero_dimens"
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:fontFamily="@font/poppins_regular"
         android:maxLines="1"
-        android:text="Wednesday, 22 March"
+        android:text="@string/app_bar_subtitle"
         android:textColor="@color/primary_black"
-        android:textSize="16sp"
+        android:textSize="@dimen/font_16"
         app:layout_constraintBottom_toBottomOf="@id/app_bar_container"
         app:layout_constraintEnd_toEndOf="@+id/hijri_date_textView"
         app:layout_constraintStart_toStartOf="@+id/hijri_date_textView"
@@ -96,8 +96,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/body_container"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="64dp"
+        android:layout_height="@dimen/body_container_height"
+        android:layout_marginTop="@dimen/margin_64"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ramadan_animation">
@@ -110,14 +110,13 @@
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:fontFamily="@font/poppins_regular"
-        android:maxLines="1"
-        android:text="Ramadan Kareem"
+        android:maxLines="2"
+        android:text="@string/ramadan_kareem"
         android:textColor="@color/primary_black"
-        android:textSize="32sp"
+        android:textSize="@dimen/font_32"
         app:layout_constraintEnd_toEndOf="@id/body_container"
         app:layout_constraintStart_toStartOf="@id/body_container"
-        app:layout_constraintTop_toTopOf="@id/body_container"
-        tools:layout_editor_absoluteY="382dp" />
+        app:layout_constraintTop_toTopOf="@id/body_container" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cardView"
