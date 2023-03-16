@@ -17,7 +17,7 @@
 ## Installation
   - To use the app, simply download or clone the repository, open the project in Android Studio, and run it on an emulator or physical device.
   ```git
-  git clone https://github.com/M7mdSh3banX/Programmer-Calculator-Challenge
+  git clone https://github.com/M7mdSh3banX/Ramadan-Challenge
   ```
 ## Video demo
 https://user-images.githubusercontent.com/93403099/225775918-1c462b07-a297-4783-9ded-c0dfd037b0ca.mp4
