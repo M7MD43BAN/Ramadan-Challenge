@@ -55,12 +55,11 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_16"
             android:ellipsize="end"
-            android:fontFamily="@font/poppins_regular"
+            android:fontFamily="@font/poppins_medium"
             android:maxLines="1"
             android:text="@string/app_bar_title"
             android:textColor="@color/primary_color"
             android:textSize="@dimen/font_28"
-            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/gregorian_date_textView"
             app:layout_constraintEnd_toEndOf="@id/app_bar_container"
             app:layout_constraintTop_toTopOf="@id/app_bar_container" />
@@ -82,13 +81,12 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/ramadan_animation"
         style="@style/customLottieAnimation"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="@dimen/ramadan_before_animation_dimens"
+        android:layout_height="@dimen/ramadan_before_animation_dimens"
+        android:layout_marginTop="@dimen/margin_32"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app_bar_container"
@@ -96,13 +94,9 @@
 
     <TextView
         android:id="@+id/title_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ellipsize="end"
-        android:fontFamily="@font/poppins_regular"
-        android:maxLines="2"
+        style="@style/generalText"
+        android:layout_marginTop="@dimen/margin_8"
         android:text="@string/ramadan_kareem"
-        android:textColor="@color/primary_black"
         android:textSize="@dimen/font_32"
         app:layout_constraintEnd_toEndOf="@id/ramadan_animation"
         app:layout_constraintStart_toStartOf="@id/ramadan_animation"
@@ -112,12 +106,15 @@
         android:id="@+id/advice_cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_16"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:layout_marginBottom="@dimen/margin_16"
         android:background="@color/offWhite"
         android:clickable="true"
         android:focusable="true"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="2dp"
+        app:cardCornerRadius="@dimen/margin_18"
+        app:cardElevation="@dimen/card_elevation"
         app:layout_constraintEnd_toEndOf="@id/title_textView"
         app:layout_constraintStart_toStartOf="@id/title_textView"
         app:layout_constraintTop_toBottomOf="@id/title_textView">
@@ -129,34 +126,20 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:fontFamily="@font/poppins_medium"
-                android:maxLines="1"
-                android:text="Healthy Tips for Ramadan"
+                style="@style/generalText.mediumFont"
+                android:text="@string/advice_card_title"
                 android:textColor="@color/primary_color"
-                android:textSize="20sp" />
+                android:textSize="@dimen/font_20" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:fontFamily="@font/poppins_regular"
-                android:maxLines="1"
-                android:text="Dates help break your fast"
-                android:textColor="@color/primary_black"
-                android:textSize="18sp" />
+                style="@style/generalText"
+                android:text="@string/advice_card_subtitle"
+                android:textSize="@dimen/font_18" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:fontFamily="@font/poppins_regular"
-                android:maxLines="2"
-                android:text="According to tradition, dates are eaten at the start of the iftar meal. Dates are a natural source of sugar, which helps to balance low blood sugar and fuel the body with much needed energy."
-                android:textColor="@color/secondary_black"
-                android:textSize="16sp" />
+                style="@style/generalText.cardBody"
+                android:text="@string/advice_card_body"
+                android:textSize="@dimen/font_16" />
 
         </LinearLayout>
 
@@ -164,8 +147,8 @@
 
     <LinearLayout
         android:id="@+id/main_desc"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/zero_dimens"
+        android:layout_height="@dimen/zero_dimens"
         android:background="@color/color_primary_variant"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -173,223 +156,97 @@
         app:layout_constraintStart_toStartOf="@id/main_title"
         app:layout_constraintTop_toBottomOf="@+id/main_title">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="4dp"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/linearLayoutStyle">
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/poppins_regular"
-                android:text="Fajr"
-                android:textAlignment="textStart"
-                android:textColor="@color/primary_black"
-                android:textSize="18sp" />
+                style="@style/prayerTimesText"
+                android:text="@string/fajr"
+                android:textAlignment="textStart" />
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/poppins_regular"
-                android:text="04:12 AM"
-                android:textAlignment="textEnd"
-                android:textColor="@color/primary_black"
-                android:textSize="18sp" />
+                style="@style/prayerTimesText"
+                android:text="@string/fajr_time"
+                android:textAlignment="textEnd" />
 
         </LinearLayout>
 
-        <com.google.android.material.divider.MaterialDivider
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="4dp"
-            app:dividerColor="@color/primary_color" />
+        <com.google.android.material.divider.MaterialDivider style="@style/dividerStyle" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="4dp"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/linearLayoutStyle">
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/poppins_regular"
-                android:text="Sunrise"
-                android:textAlignment="textStart"
-                android:textColor="@color/primary_black"
-                android:textSize="18sp" />
+                style="@style/prayerTimesText"
+                android:text="@string/sunrise"
+                android:textAlignment="textStart" />
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/poppins_regular"
-                android:text="05:46 AM"
-                android:textAlignment="textEnd"
-                android:textColor="@color/primary_black"
-                android:textSize="18sp" />
+                style="@style/prayerTimesText"
+                android:text="@string/sunrise_time"
+                android:textAlignment="textEnd" />
 
         </LinearLayout>
 
-        <com.google.android.material.divider.MaterialDivider
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="4dp"
-            app:dividerColor="@color/primary_color" />
+        <com.google.android.material.divider.MaterialDivider style="@style/dividerStyle" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="4dp"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/linearLayoutStyle">
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/poppins_regular"
-                android:text="Dhuhr"
-                android:textAlignment="textStart"
-                android:textColor="@color/primary_black"
-                android:textSize="18sp" />
+                style="@style/prayerTimesText"
+                android:text="@string/dhuhr"
+                android:textAlignment="textStart" />
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/poppins_regular"
-                android:text="12:43 PM"
-                android:textAlignment="textEnd"
-                android:textColor="@color/primary_black"
-                android:textSize="18sp" />
+                style="@style/prayerTimesText"
+                android:text="@string/dhuhr_time"
+                android:textAlignment="textEnd" />
 
         </LinearLayout>
 
-        <com.google.android.material.divider.MaterialDivider
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="4dp"
-            app:dividerColor="@color/primary_color" />
+        <com.google.android.material.divider.MaterialDivider style="@style/dividerStyle" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="4dp"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/linearLayoutStyle">
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/poppins_regular"
-                android:text="Asr"
-                android:textAlignment="textStart"
-                android:textColor="@color/primary_black"
-                android:textSize="18sp" />
+                style="@style/prayerTimesText"
+                android:text="@string/asr"
+                android:textAlignment="textStart" />
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/poppins_regular"
-                android:text="03:46 PM"
-                android:textAlignment="textEnd"
-                android:textColor="@color/primary_black"
-                android:textSize="18sp" />
+                style="@style/prayerTimesText"
+                android:text="@string/asr_time"
+                android:textAlignment="textEnd" />
 
         </LinearLayout>
 
-        <com.google.android.material.divider.MaterialDivider
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="4dp"
-            app:dividerColor="@color/primary_color" />
+        <com.google.android.material.divider.MaterialDivider style="@style/dividerStyle" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="4dp"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/linearLayoutStyle">
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/poppins_regular"
-                android:text="Maghrib"
-                android:textAlignment="textStart"
-                android:textColor="@color/primary_black"
-                android:textSize="18sp" />
+                style="@style/prayerTimesText"
+                android:text="@string/maghrib"
+                android:textAlignment="textStart" />
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/poppins_regular"
-                android:text="06:09 PM"
-                android:textAlignment="textEnd"
-                android:textColor="@color/primary_black"
-                android:textSize="18sp" />
+                style="@style/prayerTimesText"
+                android:text="@string/maghrib_time"
+                android:textAlignment="textEnd" />
 
         </LinearLayout>
 
-        <com.google.android.material.divider.MaterialDivider
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="4dp"
-            app:dividerColor="@color/primary_color" />
+        <com.google.android.material.divider.MaterialDivider style="@style/dividerStyle" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="4dp"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/linearLayoutStyle">
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/poppins_regular"
-                android:text="Isha"
-                android:textAlignment="textStart"
-                android:textColor="@color/primary_black"
-                android:textSize="18sp" />
+                style="@style/prayerTimesText"
+                android:text="@string/isha"
+                android:textAlignment="textStart" />
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/poppins_regular"
-                android:text="07:29 PM"
-                android:textAlignment="textEnd"
-                android:textColor="@color/primary_black"
-                android:textSize="18sp" />
+                style="@style/prayerTimesText"
+                android:text="@string/isha_time"
+                android:textAlignment="textEnd" />
 
         </LinearLayout>
 
@@ -398,10 +255,10 @@
     <LinearLayout
         android:id="@+id/main_title"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
+        android:layout_height="@dimen/zero_dimens"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_16"
         android:background="@drawable/prayers_time_card_shape"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="@id/advice_cardView"
@@ -410,15 +267,16 @@
 
         <TextView
             android:id="@+id/textView9"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:fontFamily="@font/poppins_medium"
             android:gravity="center"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:text="Prayer Time"
+            android:paddingTop="@dimen/margin_8"
+            android:paddingBottom="@dimen/margin_8"
+            android:text="@string/prayer_time"
             android:textColor="@color/primary_color"
-            android:textSize="28sp" />
+            android:textSize="@dimen/font_28" />
 
     </LinearLayout>
 

@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.RamadanChallenge" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
@@ -17,5 +17,50 @@
     <style name="customLottieAnimation" parent="">
         <item name="lottie_autoPlay">true</item>
         <item name="lottie_loop">true</item>
+    </style>
+
+    <style name="generalText" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">@color/primary_black</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="generalText.mediumFont">
+        <item name="fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="generalText.cardBody">
+        <item name="android:maxLines">3</item>
+        <item name="android:textColor">@color/secondary_black</item>
+    </style>
+
+    <style name="prayerTimesText" parent="">
+        <item name="android:layout_width">@dimen/zero_dimens</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">@dimen/font_16</item>
+        <item name="android:textColor">@color/primary_black</item>
+    </style>
+
+    <style name="dividerStyle" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/divider_height</item>
+        <item name="android:layout_marginStart">@dimen/margin_16</item>
+        <item name="android:layout_marginEnd">@dimen/margin_16</item>
+        <item name="android:layout_marginBottom">@dimen/margin_8</item>
+        <item name="dividerColor">@color/primary_color</item>
+    </style>
+
+    <style name="linearLayoutStyle" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/margin_16</item>
+        <item name="android:layout_marginEnd">@dimen/margin_16</item>
+        <item name="android:layout_marginBottom">@dimen/margin_4</item>
+        <item name="android:orientation">horizontal</item>
     </style>
 </resources>
