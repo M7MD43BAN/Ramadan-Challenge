@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layoutDescription="@xml/activity_main_scene"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -213,13 +214,13 @@
         android:fontFamily="@font/poppins_medium"
         android:gravity="center"
         android:maxLines="8"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         android:text="Prayer Times"
         android:textColor="@color/primary_color"
         android:textSize="24sp"
-        android:paddingBottom="8dp"
-        android:paddingTop="8dp"
         app:layout_constraintBottom_toTopOf="@id/prayers_time_card_title"
         app:layout_constraintEnd_toEndOf="@id/title_container"
         app:layout_constraintStart_toStartOf="@id/title_container" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>
