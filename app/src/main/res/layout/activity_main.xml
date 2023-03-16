@@ -7,6 +7,18 @@
     app:layoutDescription="@xml/activity_main_scene"
     tools:context=".MainActivity">
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/helal_ramadan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/helal_ramadan" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/app_bar_container"
         android:layout_width="match_parent"
@@ -76,7 +88,7 @@
         android:id="@+id/body_container"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ramadan_animation">
@@ -165,12 +177,12 @@
 
     <LinearLayout
         android:id="@+id/main_desc"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:orientation="vertical"
         android:background="@color/color_primary_variant"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -180,12 +192,12 @@
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:textSize="14sp"
             android:fontFamily="@font/poppins_regular"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor ultricies leo mi amet. Ut enim in ac egestas dolor. Lectus sociis dolor lectus elit semper habitant egestas gravida. Feugiat in morbi tempor, diam nibh sem odio neque ac. Nunc commodo in et ac ut pharetra, convallis ipsum. Dui facilisi consectetur diam tortor. In ultricies nunc laoreet dictumst velit purus sed."
+            android:padding="16dp"
+            android:text="According to tradition, dates are eaten at the start of the iftar meal. Dates are a natural source of sugar, which helps to balance low blood sugar and fuel the body with much needed energy."
             android:textAlignment="textStart"
-            android:textColor="@color/secondary_black" />
+            android:textColor="@color/secondary_black"
+            android:textSize="14sp" />
 
     </LinearLayout>
 
@@ -194,6 +206,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/prayers_time_card_shape"
@@ -209,10 +222,10 @@
             android:fontFamily="@font/poppins_medium"
             android:gravity="center"
             android:paddingTop="8dp"
+            android:paddingBottom="8dp"
             android:text="Prayer Time"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/primary_black"
-            android:textSize="20sp" />
+            android:textColor="@color/primary_color"
+            android:textSize="24sp" />
 
     </LinearLayout>
 
