@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,24 +9,24 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/background"
+        style="@style/customLottieAnimation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        style="@style/customLottieAnimation"
         app:lottie_rawRes="@raw/background_sparkles" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/helal_ramadan"
+        style="@style/customLottieAnimation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        style="@style/customLottieAnimation"
+        app:layout_constraintTop_toBottomOf="@id/app_bar_container"
         app:lottie_rawRes="@raw/helal_ramadan" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -84,25 +84,14 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/ramadan_animation"
+        style="@style/customLottieAnimation"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app_bar_container"
-        style="@style/customLottieAnimation"
         app:lottie_rawRes="@raw/muslim_people" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/body_container"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/body_container_height"
-        android:layout_marginTop="@dimen/margin_64"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ramadan_animation">
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/title_textView"
@@ -114,74 +103,64 @@
         android:text="@string/ramadan_kareem"
         android:textColor="@color/primary_black"
         android:textSize="@dimen/font_32"
-        app:layout_constraintEnd_toEndOf="@id/body_container"
-        app:layout_constraintStart_toStartOf="@id/body_container"
-        app:layout_constraintTop_toTopOf="@id/body_container" />
+        app:layout_constraintEnd_toEndOf="@id/ramadan_animation"
+        app:layout_constraintStart_toStartOf="@id/ramadan_animation"
+        app:layout_constraintTop_toBottomOf="@id/ramadan_animation" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cardView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/card_shape"
-        app:layout_constraintBottom_toBottomOf="@id/body_container"
-        app:layout_constraintEnd_toEndOf="@id/body_container"
-        app:layout_constraintStart_toStartOf="@id/body_container"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/advice_cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16"
+        android:background="@color/offWhite"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="2dp"
+        app:layout_constraintEnd_toEndOf="@id/title_textView"
+        app:layout_constraintStart_toStartOf="@id/title_textView"
         app:layout_constraintTop_toBottomOf="@id/title_textView">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_8"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tips_title"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:ellipsize="end"
-        android:fontFamily="@font/poppins_medium"
-        android:maxLines="1"
-        android:text="Healthy Tips for Ramadan"
-        android:textColor="@color/primary_color"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/subtitle_of_tips"
-        app:layout_constraintEnd_toEndOf="@+id/cardView"
-        app:layout_constraintStart_toStartOf="@id/cardView"
-        app:layout_constraintTop_toTopOf="@id/cardView" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/poppins_medium"
+                android:maxLines="1"
+                android:text="Healthy Tips for Ramadan"
+                android:textColor="@color/primary_color"
+                android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/subtitle_of_tips"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ellipsize="end"
-        android:fontFamily="@font/poppins_regular"
-        android:maxLines="1"
-        android:text="Dates help break your fast"
-        android:textColor="@color/primary_black"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@id/body_of_tips"
-        app:layout_constraintEnd_toEndOf="@+id/tips_title"
-        app:layout_constraintStart_toStartOf="@+id/tips_title"
-        app:layout_constraintTop_toBottomOf="@+id/tips_title" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/poppins_regular"
+                android:maxLines="1"
+                android:text="Dates help break your fast"
+                android:textColor="@color/primary_black"
+                android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/body_of_tips"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:layout_marginBottom="8dp"
-        android:ellipsize="end"
-        android:fontFamily="@font/poppins_regular"
-        android:maxLines="2"
-        android:text="According to tradition, dates are eaten at the start of the iftar meal. Dates are a natural source of sugar, which helps to balance low blood sugar and fuel the body with much needed energy."
-        android:textColor="@color/secondary_black"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@id/cardView"
-        app:layout_constraintEnd_toEndOf="@+id/subtitle_of_tips"
-        app:layout_constraintStart_toStartOf="@+id/subtitle_of_tips"
-        app:layout_constraintTop_toBottomOf="@+id/subtitle_of_tips" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/poppins_regular"
+                android:maxLines="2"
+                android:text="According to tradition, dates are eaten at the start of the iftar meal. Dates are a natural source of sugar, which helps to balance low blood sugar and fuel the body with much needed energy."
+                android:textColor="@color/secondary_black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
 
     <LinearLayout
         android:id="@+id/main_desc"
@@ -429,7 +408,7 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/subtitle_of_tips">
+        app:layout_constraintTop_toBottomOf="@id/advice_cardView">
 
         <TextView
             android:id="@+id/textView9"
@@ -445,4 +424,4 @@
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>

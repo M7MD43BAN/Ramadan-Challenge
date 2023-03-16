@@ -7,22 +7,7 @@
         motion:constraintSetStart="@id/start"
         motion:duration="1000">
         <KeyFrameSet>
-            <KeyAttribute
-                android:alpha="0"
-                motion:framePosition="100"
-                motion:motionTarget="@id/cardView" />
-            <KeyAttribute
-                android:alpha="0"
-                motion:framePosition="100"
-                motion:motionTarget="@+id/tips_title" />
-            <KeyAttribute
-                android:alpha="0"
-                motion:framePosition="100"
-                motion:motionTarget="@+id/subtitle_of_tips" />
-            <KeyAttribute
-                android:alpha="0"
-                motion:framePosition="100"
-                motion:motionTarget="@+id/body_of_tips" />
+
         </KeyFrameSet>
         <OnSwipe
             motion:touchAnchorId="@+id/main_title"
@@ -55,14 +40,6 @@
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toBottomOf="@+id/app_bar_container" />
-        <Constraint
-            android:id="@+id/body_container"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginTop="32dp"
-            motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toBottomOf="@id/ramadan_animation" />
         <Constraint
             android:id="@+id/helal_ramadan"
             android:layout_width="wrap_content"
