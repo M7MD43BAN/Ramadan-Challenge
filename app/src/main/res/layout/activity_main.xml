@@ -38,49 +38,50 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/menu_icon"
+            android:layout_width="@dimen/zero_dimens"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:contentDescription="@null"
+            app:layout_constraintBottom_toBottomOf="@id/app_bar_container"
+            app:layout_constraintStart_toStartOf="@id/app_bar_container"
+            app:layout_constraintTop_toTopOf="@id/app_bar_container"
+            app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
+
+        <TextView
+            android:id="@+id/hijri_date_textView"
+            android:layout_width="@dimen/zero_dimens"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_regular"
+            android:maxLines="1"
+            android:text="@string/app_bar_title"
+            android:textColor="@color/primary_color"
+            android:textSize="@dimen/font_28"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/gregorian_date_textView"
+            app:layout_constraintEnd_toEndOf="@id/app_bar_container"
+            app:layout_constraintTop_toTopOf="@id/app_bar_container" />
+
+        <TextView
+            android:id="@+id/gregorian_date_textView"
+            android:layout_width="@dimen/zero_dimens"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_regular"
+            android:maxLines="1"
+            android:text="@string/app_bar_subtitle"
+            android:textColor="@color/primary_black"
+            android:textSize="@dimen/font_16"
+            app:layout_constraintBottom_toBottomOf="@id/app_bar_container"
+            app:layout_constraintEnd_toEndOf="@+id/hijri_date_textView"
+            app:layout_constraintStart_toStartOf="@+id/hijri_date_textView"
+            app:layout_constraintTop_toBottomOf="@+id/hijri_date_textView" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/menu_icon"
-        android:layout_width="@dimen/zero_dimens"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_16"
-        android:contentDescription="@null"
-        app:layout_constraintBottom_toBottomOf="@id/app_bar_container"
-        app:layout_constraintStart_toStartOf="@id/app_bar_container"
-        app:layout_constraintTop_toTopOf="@id/app_bar_container"
-        app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
-
-    <TextView
-        android:id="@+id/hijri_date_textView"
-        android:layout_width="@dimen/zero_dimens"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/margin_16"
-        android:ellipsize="end"
-        android:fontFamily="@font/poppins_regular"
-        android:maxLines="1"
-        android:text="@string/app_bar_title"
-        android:textColor="@color/primary_color"
-        android:textSize="@dimen/font_28"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/gregorian_date_textView"
-        app:layout_constraintEnd_toEndOf="@id/app_bar_container"
-        app:layout_constraintTop_toTopOf="@id/app_bar_container" />
-
-    <TextView
-        android:id="@+id/gregorian_date_textView"
-        android:layout_width="@dimen/zero_dimens"
-        android:layout_height="wrap_content"
-        android:ellipsize="end"
-        android:fontFamily="@font/poppins_regular"
-        android:maxLines="1"
-        android:text="@string/app_bar_subtitle"
-        android:textColor="@color/primary_black"
-        android:textSize="@dimen/font_16"
-        app:layout_constraintBottom_toBottomOf="@id/app_bar_container"
-        app:layout_constraintEnd_toEndOf="@+id/hijri_date_textView"
-        app:layout_constraintStart_toStartOf="@+id/hijri_date_textView"
-        app:layout_constraintTop_toBottomOf="@+id/hijri_date_textView" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/ramadan_animation"
@@ -161,18 +162,15 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-
     <LinearLayout
         android:id="@+id/main_desc"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:background="@color/color_primary_variant"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/main_title"
+        app:layout_constraintStart_toStartOf="@id/main_title"
         app:layout_constraintTop_toBottomOf="@+id/main_title">
 
         <LinearLayout
@@ -406,8 +404,8 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/prayers_time_card_shape"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/advice_cardView"
+        app:layout_constraintStart_toStartOf="@id/advice_cardView"
         app:layout_constraintTop_toBottomOf="@id/advice_cardView">
 
         <TextView
