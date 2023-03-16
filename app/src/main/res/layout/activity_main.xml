@@ -6,6 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/app_bar_container"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/menu_icon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="@id/app_bar_container"
+        app:layout_constraintStart_toStartOf="@id/app_bar_container"
+        app:layout_constraintTop_toTopOf="@id/app_bar_container"
+        app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
+
+    <TextView
+        android:id="@+id/gregorian_date_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Wednesday, 22 March"
+        app:layout_constraintBottom_toTopOf="@id/hijri_date_textView"
+        app:layout_constraintEnd_toEndOf="@id/app_bar_container"
+        app:layout_constraintTop_toTopOf="@id/app_bar_container" />
+
+    <TextView
+        android:id="@+id/hijri_date_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="1 Ramadan, 1444"
+        app:layout_constraintBottom_toBottomOf="@id/app_bar_container"
+        app:layout_constraintEnd_toEndOf="@+id/gregorian_date_textView"
+        app:layout_constraintStart_toStartOf="@+id/gregorian_date_textView"
+        app:layout_constraintTop_toBottomOf="@+id/gregorian_date_textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
