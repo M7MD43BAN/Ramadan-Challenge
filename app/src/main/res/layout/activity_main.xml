@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -36,10 +35,11 @@
         android:layout_marginEnd="16dp"
         android:ellipsize="end"
         android:fontFamily="@font/poppins_regular"
-        android:textSize="24sp"
-        android:textColor="@color/black"
         android:maxLines="1"
         android:text="1 Ramadan, 1444"
+        android:textColor="@color/primary_color"
+        android:textSize="28sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/gregorian_date_textView"
         app:layout_constraintEnd_toEndOf="@id/app_bar_container"
         app:layout_constraintTop_toTopOf="@id/app_bar_container" />
@@ -49,25 +49,118 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ellipsize="end"
-        android:maxLines="1"
         android:fontFamily="@font/poppins_regular"
-        android:textSize="16sp"
-        android:textColor="@color/black"
+        android:maxLines="1"
         android:text="Wednesday, 22 March"
+        android:textColor="@color/primary_black"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@id/app_bar_container"
         app:layout_constraintEnd_toEndOf="@+id/hijri_date_textView"
         app:layout_constraintStart_toStartOf="@+id/hijri_date_textView"
         app:layout_constraintTop_toBottomOf="@+id/hijri_date_textView" />
 
     <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/ramadan_animation"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app_bar_container"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/muslim_people" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/body_container"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ramadan_animation">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/title_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_regular"
+        android:maxLines="1"
+        android:text="Ramadan Kareem"
+        android:textColor="@color/primary_black"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="@id/body_container"
+        app:layout_constraintStart_toStartOf="@id/body_container"
+        app:layout_constraintTop_toTopOf="@id/body_container"
+        tools:layout_editor_absoluteY="382dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/card_shape"
+        app:layout_constraintBottom_toBottomOf="@id/body_container"
+        app:layout_constraintEnd_toEndOf="@id/body_container"
+        app:layout_constraintStart_toStartOf="@id/body_container"
+        app:layout_constraintTop_toBottomOf="@id/title_textView">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tips_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_medium"
+        android:maxLines="1"
+        android:text="Healthy Tips for Ramadan"
+        android:textColor="@color/primary_color"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/body_of_tips"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="@id/cardView"
+        app:layout_constraintTop_toTopOf="@id/cardView" />
+
+    <TextView
+        android:id="@+id/body_of_tips"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_regular"
+        android:maxLines="1"
+        android:text="Dates help break your fast"
+        android:textColor="@color/primary_black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/textView11"
+        app:layout_constraintEnd_toEndOf="@+id/tips_title"
+        app:layout_constraintStart_toStartOf="@+id/tips_title"
+        app:layout_constraintTop_toBottomOf="@+id/tips_title" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="8dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_regular"
+        android:maxLines="2"
+        android:text="According to tradition, dates are eaten at the start of the iftar meal. dates are eaten at the start of the iftar meal."
+        android:textColor="@color/secondary_black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/cardView"
+        app:layout_constraintEnd_toEndOf="@+id/body_of_tips"
+        app:layout_constraintStart_toStartOf="@+id/body_of_tips"
+        app:layout_constraintTop_toBottomOf="@+id/body_of_tips" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
