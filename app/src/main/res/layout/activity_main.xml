@@ -125,13 +125,13 @@
         android:text="Healthy Tips for Ramadan"
         android:textColor="@color/primary_color"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/body_of_tips"
+        app:layout_constraintBottom_toTopOf="@+id/subtitle_of_tips"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
         app:layout_constraintStart_toStartOf="@id/cardView"
         app:layout_constraintTop_toTopOf="@id/cardView" />
 
     <TextView
-        android:id="@+id/body_of_tips"
+        android:id="@+id/subtitle_of_tips"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ellipsize="end"
@@ -140,13 +140,13 @@
         android:text="Dates help break your fast"
         android:textColor="@color/primary_black"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@id/textView11"
+        app:layout_constraintBottom_toTopOf="@id/body_of_tips"
         app:layout_constraintEnd_toEndOf="@+id/tips_title"
         app:layout_constraintStart_toStartOf="@+id/tips_title"
         app:layout_constraintTop_toBottomOf="@+id/tips_title" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/body_of_tips"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
@@ -158,25 +158,22 @@
         android:textColor="@color/secondary_black"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@id/cardView"
-        app:layout_constraintEnd_toEndOf="@+id/body_of_tips"
-        app:layout_constraintStart_toStartOf="@+id/body_of_tips"
-        app:layout_constraintTop_toBottomOf="@+id/body_of_tips" />
+        app:layout_constraintEnd_toEndOf="@+id/subtitle_of_tips"
+        app:layout_constraintStart_toStartOf="@+id/subtitle_of_tips"
+        app:layout_constraintTop_toBottomOf="@+id/subtitle_of_tips" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/prayers_time_card_title"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/prayers_time_card_shape"
-        app:layout_constraintTop_toBottomOf="@id/body_container"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <TextView
         android:id="@+id/prayer_card_title"
@@ -185,28 +182,41 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:gravity="center"
-        android:textColor="@color/primary_black"
         android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="Heavy meals that contain lots of saturated fat, sodium and sugar should be avoided whenever possible. Instead of preparing fried meals, try baking, steaming, grilling, stewing and roasting. Rather than using salt and sugar to flavor meals, use herbs and spices. For dessert, reach for a healthy piece of fruit that contains natural sugars rather than candies, cakes or other baked goods that contain refined sugar or artificial sweeteners."
+        android:textColor="@color/primary_color"
         android:textSize="24sp"
-        android:text="Prayer Times"
         app:layout_constraintEnd_toEndOf="@id/prayers_time_card_title"
         app:layout_constraintStart_toStartOf="@id/prayers_time_card_title"
         app:layout_constraintTop_toTopOf="@id/prayers_time_card_title" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/title_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/offWhite"
+        app:layout_constraintBottom_toTopOf="@+id/prayers_time_card_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/prayer_card_body"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_regular"
-        android:textSize="16sp"
         android:ellipsize="end"
+        android:fontFamily="@font/poppins_regular"
         android:maxLines="8"
-        android:textColor="@color/primary_color"
-        android:text="Heavy meals that contain lots of saturated fat, sodium and sugar should be avoided whenever possible. Instead of preparing fried meals, try baking, steaming, grilling, stewing and roasting. Rather than using salt and sugar to flavor meals, use herbs and spices. For dessert, reach for a healthy piece of fruit that contains natural sugars rather than candies, cakes or other baked goods that contain refined sugar or artificial sweeteners."
-        app:layout_constraintEnd_toEndOf="@+id/prayer_card_title"
-        app:layout_constraintStart_toStartOf="@+id/prayer_card_title"
-        app:layout_constraintTop_toBottomOf="@+id/prayer_card_title" />
+        android:text="Prayer Times"
+        android:textColor="@color/primary_black"
+        android:textSize="18sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/prayers_time_card_title"
+        app:layout_constraintEnd_toEndOf="@id/title_container"
+        app:layout_constraintStart_toStartOf="@id/title_container" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
